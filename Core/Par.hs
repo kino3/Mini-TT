@@ -1089,7 +1089,7 @@ happyReduction_21 (HappyAbsSyn18  happy_var_3)
 	_
 	(HappyAbsSyn18  happy_var_1)
 	 =  HappyAbsSyn18
-		 (Core.Abs.eArrow_ happy_var_1 happy_var_3
+		 (Core.Par.eArrow_ happy_var_1 happy_var_3
 	)
 happyReduction_21 _ _ _  = notHappyAtAll 
 
@@ -1098,7 +1098,7 @@ happyReduction_22 (HappyAbsSyn18  happy_var_3)
 	_
 	(HappyAbsSyn18  happy_var_1)
 	 =  HappyAbsSyn18
-		 (Core.Abs.eTimes_ happy_var_1 happy_var_3
+		 (Core.Par.eTimes_ happy_var_1 happy_var_3
 	)
 happyReduction_22 _ _ _  = notHappyAtAll 
 
