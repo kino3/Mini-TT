@@ -11,61 +11,45 @@ failure x = Bad $ "Undefined case: " ++ show x
 
 transIdent :: Ident -> Result
 transIdent x = case x of
-  Ident str  -> failure x
-
-
+  Ident string -> failure x
 transCaseTk :: CaseTk -> Result
 transCaseTk x = case x of
-  CaseTk str  -> failure x
-
-
+  CaseTk string -> failure x
 transDataTk :: DataTk -> Result
 transDataTk x = case x of
-  DataTk str  -> failure x
-
-
+  DataTk string -> failure x
 transExp :: Exp -> Result
 transExp x = case x of
-  ELam patt exp  -> failure x
-  ESet  -> failure x
-  EPi patt exp0 exp  -> failure x
-  ESig patt exp0 exp  -> failure x
-  EOne  -> failure x
-  Eunit  -> failure x
-  EPair exp0 exp  -> failure x
-  ECon id exp  -> failure x
-  EData datatk summands  -> failure x
-  ECase casetk branchs  -> failure x
-  EFst exp  -> failure x
-  ESnd exp  -> failure x
-  EApp exp0 exp  -> failure x
-  EVar id  -> failure x
-  EVoid  -> failure x
-  EDec decl exp  -> failure x
-  EPN  -> failure x
-
-
+  ELam patt exp -> failure x
+  ESet -> failure x
+  EPi patt exp1 exp2 -> failure x
+  ESig patt exp1 exp2 -> failure x
+  EOne -> failure x
+  Eunit -> failure x
+  EPair exp1 exp2 -> failure x
+  ECon ident exp -> failure x
+  EData datatk summands -> failure x
+  ECase casetk branchs -> failure x
+  EFst exp -> failure x
+  ESnd exp -> failure x
+  EApp exp1 exp2 -> failure x
+  EVar ident -> failure x
+  EVoid -> failure x
+  EDec decl exp -> failure x
+  EPN -> failure x
 transDecl :: Decl -> Result
 transDecl x = case x of
-  Def patt exp0 exp  -> failure x
-  Drec patt exp0 exp  -> failure x
-
-
+  Def patt exp1 exp2 -> failure x
+  Drec patt exp1 exp2 -> failure x
 transPatt :: Patt -> Result
 transPatt x = case x of
-  PPair patt0 patt  -> failure x
-  Punit  -> failure x
-  PVar id  -> failure x
-
-
+  PPair patt1 patt2 -> failure x
+  Punit -> failure x
+  PVar ident -> failure x
 transSummand :: Summand -> Result
 transSummand x = case x of
-  Summand id exp  -> failure x
-
-
+  Summand ident exp -> failure x
 transBranch :: Branch -> Result
 transBranch x = case x of
-  Branch id exp  -> failure x
-
-
+  Branch ident exp -> failure x
 
