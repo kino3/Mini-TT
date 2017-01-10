@@ -1,0 +1,3 @@
+
+let Bool : U = Sum (true | false)
+--letrec Nat : U = Sum ( zero | succ Nat )
