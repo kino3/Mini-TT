@@ -50,3 +50,6 @@ ex = V , T
     T : V → Set
     T nat          = Nat
     T (pi (x , f)) = (y : T x) → T (f y)
+
+   hoge : V
+   hoge = pi (nat , (λ x → pi (nat , (λ y → {!!}))))
